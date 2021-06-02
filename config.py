@@ -6,12 +6,12 @@ class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'secret-key'
 
     BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'hamburgstorage'
-    BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or '1PmRcuuf5YGj9kp8XziWgw5tq58rstXQTs/K4tGOsvcf2egcNkuGH2Xr1MY/wg9hwP7ZQY6r6xT9v419s9/vaw=='
+    BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'x4Fgjc2ZWwLciP3743CrhVBYe3pq+t+kbpoLPX4Zyl6zzUii4OtrfgbN0O7pN4XcPTFBEkNg8xCyvPXlXxItAQ=='
     BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
 
     SQL_SERVER = os.environ.get('SQL_SERVER') or 'hamburg-east-db-server.database.windows.net'
     SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'hamburg-east-db'
-    SQL_USER_NAME = os.environ.get('SQL_USER_NAME') or 'marthy_marthy'
+    SQL_USER_NAME = os.environ.get('SQL_USER_NAME') or 'marthy'
     SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'Udacityadmin@123'
     # Below URI may need some adjustments for driver version, based on your OS, if running locally
     SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://' + SQL_USER_NAME + '@' + SQL_SERVER + ':' + SQL_PASSWORD + '@' + SQL_SERVER + ':1433/' + SQL_DATABASE  + '?driver=ODBC+Driver+17+for+SQL+Server'
