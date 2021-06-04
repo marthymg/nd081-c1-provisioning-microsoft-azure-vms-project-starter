@@ -60,7 +60,11 @@ def post(id):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    #logger
+    app.logger.info('login process started ...')
     if current_user.is_authenticated:
+        #logger
+        app.logger.info('valid login - logged in successfully.')
         return redirect(url_for('home'))
     form = LoginForm()
     if form.validate_on_submit():
@@ -75,7 +79,7 @@ def login():
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('home')
         #logger
-        app.logger.error('valid login - logged in successfully.')
+        app.logger.info('valid login - logged in successfully.')
         return redirect(next_page)
     session["state"] = str(uuid.uuid4())
     auth_url = _build_auth_url(scopes=Config.SCOPE, state=session["state"])
